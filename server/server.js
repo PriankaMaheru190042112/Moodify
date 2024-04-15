@@ -7,7 +7,7 @@ const PORT= 3002
 app.use(cors())
 
 app.get("/api/music", async(req, res)=>{
-    const OPENAI_API_KEY= ""
+    const OPENAI_API_KEY= process.env.API_KEY
     const openai= new OpenAi({apiKey: OPENAI_API_KEY})
     const aiModel= "gpt-3.5-turbo"
     const inputJson = req.query.inputs
